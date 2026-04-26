@@ -52,14 +52,13 @@ def resolve_file_path(filename: str = "customer_orders.db") -> Path:
             f"Could not find {filename}. Looked in: " + ", ".join(str(c) for c in candidates) + " Place it in the same folder as app.py."
     )
 
-DB_PATH = resolve_file_path()
+DB_PATH = resolve_file_path("data/customer_orders.db")
 
 ########################################## LOAD AND RETURN THE LLM #########################################
 @st.cache_resource
 def get_llm():
     """Function to load and return the LLM"""
-    os.environ["GROQ_API_KEY"] = "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"
-    key = os.getenv("GROQ_API_KEY", "") or st.secrets.get("GROQ_API_KEY")
+    key = os.environ.get("GROQ_API_KEY", "") or st.secrets.get("GROQ_API_KEY")
     if not key:
         st.error("GROQ_API_KEY not set. Add it to .streamlit/secrets.toml or as an env var.")
         st.stop()
