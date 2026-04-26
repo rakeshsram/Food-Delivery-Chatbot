@@ -52,7 +52,7 @@ def resolve_file_path(filename: str = "customer_orders.db") -> Path:
             f"Could not find {filename}. Looked in: " + ", ".join(str(c) for c in candidates) + " Place it in the same folder as app.py."
     )
 
-DB_PATH = resolve_file_path("data/customer_orders.db")
+DB_PATH = resolve_file_path("customer_orders.db")
 
 ########################################## LOAD AND RETURN THE LLM #########################################
 @st.cache_resource

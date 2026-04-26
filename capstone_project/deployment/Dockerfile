@@ -16,7 +16,7 @@ ENV HOME=/home/user \
 	PATH=/home/user/.local/bin:$PATH
 
 WORKDIR $HOME/app
-
+EXPOSE 8501
 COPY --chown=user . $HOME/app
 
 # Define the command to run the Streamlit app on port "8501" and make it accessible externally
