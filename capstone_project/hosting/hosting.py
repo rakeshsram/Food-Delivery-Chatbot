@@ -7,7 +7,7 @@ repo_id = "rakesh1715/Food-Delivery-Chatbot"
 api.create_repo(
     repo_id=repo_id, 
     repo_type="space", 
-    space_sdk="streamlit", 
+    space_sdk="gradio", 
     exist_ok=True
 )
 api.upload_folder(
