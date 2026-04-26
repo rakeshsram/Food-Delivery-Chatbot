@@ -15,3 +15,4 @@ api.add_space_secret(
     repo_id="rakesh1715/Food-Delivery-Chatbot",
     key="GROQ_API_KEY",
     value="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"
+)
