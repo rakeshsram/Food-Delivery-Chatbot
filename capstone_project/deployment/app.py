@@ -58,6 +58,7 @@ DB_PATH = resolve_file_path("customer_orders.db")
 @st.cache_resource
 def get_llm():
     """Function to load and return the LLM"""
+    os.environ["GROQ_API_KEY"] = "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"
     key = os.environ.get("GROQ_API_KEY", "") or st.secrets.get("GROQ_API_KEY")
     if not key:
         st.error("GROQ_API_KEY not set. Add it to .streamlit/secrets.toml or as an env var.")
